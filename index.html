@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorful Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f6f6fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .calculator {
+      background: #d6b4f0;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      width: 320px;
+      text-align: center;
+    }
+
+    .owner {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #4b0082;
+    }
+
+    .display {
+      width: 100%;
+      height: 60px;
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: right;
+      padding: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      overflow-x: auto;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    button {
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.15);
+      transition: 0.2s;
+    }
+
+    button:active {
+      transform: scale(0.9);
+    }
+
+    /* launuka daban-daban */
+    .pink { background: #f8c8dc; }
+    .yellow { background: #ffe680; }
+    .green { background: #b2f2bb; }
+    .blue { background: #a5d8ff; }
+    .orange { background: #ff9966; color: #fff; }
+    .purple { background: #d0b3ff; }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <!-- Sunanka ko paragraph -->
+    <p class="owner">🌸B.HABU CALCULATOR🌸</p>
+
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="pink" onclick="clearEntry()">CE</button>
+      <button class="orange" onclick="allClear()">AC</button>
+      <button class="yellow" onclick="append('%')">%</button>
+      <button class="green" onclick="append('/')">÷</button>
+
+      <button class="yellow" onclick="append('7')">7</button>
+      <button class="yellow" onclick="append('8')">8</button>
+      <button class="yellow" onclick="append('9')">9</button>
+      <button class="green" onclick="append('*')">×</button>
+
+      <button class="yellow" onclick="append('4')">4</button>
+      <button class="yellow" onclick="append('5')">5</button>
+      <button class="yellow" onclick="append('6')">6</button>
+      <button class="green" onclick="append('-')">−</button>
+
+      <button class="yellow" onclick="append('1')">1</button>
+      <button class="yellow" onclick="append('2')">2</button>
+      <button class="yellow" onclick="append('3')">3</button>
+      <button class="green" onclick="append('+')">+</button>
+
+      <button class="blue" onclick="append('0')">0</button>
+      <button class="blue" onclick="append('00')">00</button>
+      <button class="blue" onclick="append('.')">.</button>
+      <button class="blue" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById("display");
+
+    function append(value) {
+      if (display.innerText === "0") {
+        display.innerText = value;
+      } else {
+        display.innerText += value;
+      }
+    }
+
+    function allClear() {
+      display.innerText = "0";
+    }
+
+    function clearEntry() {
+      display.innerText = display.innerText.slice(0, -1);
+      if (display.innerText === "") {
+        display.innerText = "0";
+      }
+    }
+
+    function calculate() {
+      try {
+        display.innerText = eval(display.innerText.replace("÷", "/").replace("×", "*"));
+      } catch {
+        display.innerText = "Error";
+      }
+    }
+  </script>
+</body>
+</html>
