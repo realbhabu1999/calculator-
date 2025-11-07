@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ND2C GROUP "B" CALCULATOR</title>
+  <style>
+    /* ====== GENERAL BACKGROUND ====== */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #e0eafc, #cfdef3);
+      background-size: cover;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* ====== CARD DESIGN ====== */
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      padding: 30px;
+      text-align: center;
+      width: 380px;
+      margin-bottom: 25px;
+      transition: transform 0.4s;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* ====== HEADER TEXT ====== */
+    .group-name {
+      font-size: 26px;
+      color: #0077cc;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #ff6600;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    /* ====== MEMBER LIST ====== */
+    .members {
+      background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-top: 10px;
+      text-align: center;
+      box-shadow: inset 0px 2px 6px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .members p {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0056b3;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .members ol {
+      display: inline-block; /* don tsakiya */
+      text-align: left;
+      padding-left: 25px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px 25px;
+    }
+
+    .members ol li {
+      margin-bottom: 6px;
+      font-size: 15px;
+      color: #222;
+      font-style: italic;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .members ol li:hover {
+      color: #0077cc;
+      transform: translateX(6px);
+    }
+
+    /* ====== CALCULATOR BOX ====== */
+    .calculator {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+      width: 320px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .display {
+      width: 100%;
+      height: 60px;
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: right;
+      padding: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      overflow-x: auto;
+      box-shadow: inset 0px 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    button {
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+    }
+
+    button:active {
+      transform: scale(0.9);
+      box-shadow: inset 0px 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .pink { background: #f8c8dc; }
+    .yellow { background: #ffe680; }
+    .green { background: #b2f2bb; }
+    .blue { background: #a5d8ff; }
+    .orange { background: #ff9966; color: #fff; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ====== FOOTER ====== */
+    .footer {
+      margin-top: 25px;
+      color: #111;
+      font-size: 14px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== GROUP CARD ===== -->
+  <div class="card">
+    <div class="group-name">ND2C GROUP "B"</div>
+    <div class="subtitle">COMPUTER SCIENCE DEPARTMENT</div>
+
+    <div class="members">
+      <p><strong>Members List</strong></p>
+      <ol>
+        <li>ABUBAKAR NASIR MUSA — ND/COM/23/0002</li>
+        <li>AISHA YUSUF USMAN — ND/COM/23/0097</li>
+        <li>ZAINAB UMAR — ND/COM/23/0133</li>
+        <li>SULAIMAN AMINU JAFAR — ND/COM/23/0005</li>
+        <li>ABDULMAJEED SAFIYANU ISMAIL — ND/COM/23/0114</li>
+        <li>JIBRIN ABDULLAHI YUNUSA — ND/COM/23/0142</li>
+        <li>ALIYU JAMILU SANI — ND/COM/23/0118</li>
+        <li>KHALIFA DALLADI — ND/COM/23/0021</li>
+        <li>ABDUSSAMAD TAHIR — ND/COM/23/0063</li>
+        <li>AHMAD MURTALA AHMAD —C/O ND/COM/22/0123</li>
+        <li>USMAN SANI ABDULLAHI — ND/COM/23/0168</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ===== CALCULATOR ===== -->
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="pink" onclick="playClick(); clearEntry()">CE</button>
+      <button class="orange" onclick="playClick(); allClear()">AC</button>
+      <button class="yellow" onclick="playClick(); append('%')">%</button>
+      <button class="green" onclick="playClick(); append('/')">÷</button>
+
+      <button class="yellow" onclick="playClick(); append('7')">7</button>
+      <button class="yellow" onclick="playClick(); append('8')">8</button>
+      <button class="yellow" onclick="playClick(); append('9')">9</button>
+      <button class="green" onclick="playClick(); append('*')">×</button>
+
+      <button class="yellow" onclick="playClick(); append('4')">4</button>
+      <button class="yellow" onclick="playClick(); append('5')">5</button>
+      <button class="yellow" onclick="playClick(); append('6')">6</button>
+      <button class="green" onclick="playClick(); append('-')">−</button>
+
+      <button class="yellow" onclick="playClick(); append('1')">1</button>
+      <button class="yellow" onclick="playClick(); append('2')">2</button>
+      <button class="yellow" onclick="playClick(); append('3')">3</button>
+      <button class="green" onclick="playClick(); append('+')">+</button>
+
+      <button class="blue" onclick="playClick(); append('0')">0</button>
+      <button class="blue" onclick="playClick(); append('00')">00</button>
+      <button class="blue" onclick="playClick(); append('.')">.</button>
+      <button class="blue" onclick="playClick(); calculate()">=</button>
+    </div>
+  </div>
+
+  <!-- ===== SOUND ===== -->
+  <audio id="clickSound">
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+  </audio>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    let display = document.getElementById("display");
+    let clickSound = document.getElementById("clickSound");
+
+    function playClick() {
+      clickSound.currentTime = 0;
+      clickSound.play();
+    }
+
+    function append(value) {
+      if (display.innerText === "0") {
+        display.innerText = value;
+      } else {
+        display.innerText += value;
+      }
+    }
+
+    function allClear() {
+      display.innerText = "0";
+    }
+
+    function clearEntry() {
+      display.innerText = display.innerText.slice(0, -1);
+      if (display.innerText === "") {
+        display.innerText = "0";
+      }
+    }
+
+    function calculate() {
+      try {
+        display.innerText = eval(display.innerText.replace("÷", "/").replace("×", "*"));
+      } catch {
+        display.innerText = "Error";
+      }
+    }
+  </script>
+
+  <div class="footer">
+    © 2025 ND2C Group "B" | Calculator Project
+  </div>
+
+</body>
+</html>
